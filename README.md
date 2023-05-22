@@ -71,10 +71,12 @@ Aquí se usa el id del carrito en el parámetro :cid para especificar en que car
 http://localhost:8080/api/carts/:cid
 En este método se puede agregar también un sort, limit o page para hacer especificaciones en la página
 
-
-
-
-
+- Método PUT (para actualizar un producto en el array de productos)
+http://localhost:8080/api/carts/:cid/product/:pid
+En este método se puede alterar la cantidad de un producto especifico de un carrito especifico según su id pasándole un objeto se esta manera por ejemplo: 
+{              
+  "quantity": 8
+}
 
 - Método DELETE (para quitar un producto del carrito)<br>
 http://localhost:8080/api/carts/:cid/product/:pid<br>
@@ -82,6 +84,6 @@ Al igual que el método anterior se usa el id del carrito en el parámetro :cid 
 Cuando se elimina un producto con cierta cantidad (por ejemplo 8) esta va disminuyendo, pero si la cantidad es 1 y se ejecuta este método lo borrará al no quedar ninguna cantidad de ese producto
 
 - Método DELETE (para eliminar carrito)<br>
-http://localhost:8080/api/carts/:cid<br>
-Se borrará el carrito con el carrito con el id específicado
+http://localhost:8080/api/carts/deleteCart/:cid<br>
+Se borrará el carrito con el id específicado
 
