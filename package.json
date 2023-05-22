@@ -1,0 +1,19 @@
+{
+  "name": "desafio7-mongo-avanzado-oliver-zapata",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "mongoose": "^7.1.1",
+    "socket.io": "^4.6.1"
+  }
+}
