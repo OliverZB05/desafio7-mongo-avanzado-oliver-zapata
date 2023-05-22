@@ -29,7 +29,7 @@ app.use("/api/carts", cartsRouter);          (carts.router.js)
 ### (Los métodos este router solo se pueden ejecutar mediante postman)
 
 - Método GET<br>
-http://localhost:8080/api/products
+http://localhost:8080/api/products<br>
 Ahora con la implementación de la paginación se puede colocar al final de la ruta un límite y una pagina específica que se quiera ver, como por ejemplo de esta forma: http://localhost:8080/api/products?page=2&limit=3, también se puede especificar un orden añadiendo sort (De forma descendente: http://localhost:8080/api/products?sort=desc) (De forma ascendente: http://localhost:8080/api/products?sort=asc)
 
 - Método GET por id<br>
@@ -51,7 +51,7 @@ Se borrará el producto con el id específicado
 ### Métodos del router carts.router.js
 ### (Los métodos este router solo se pueden ejecutar mediante postman)
 - Método GETAll<br>
-http://localhost:8080/api/carts/getAll
+http://localhost:8080/api/carts/getAll<br>
 Mediante este método el usuario puede darse cuenta de todos los carritos que se han creado
 
 - Método GET por ID<br>
@@ -65,16 +65,16 @@ http://localhost:8080/api/carts
 http://localhost:8080/api/carts/:cid/product/:pid<br>
 Aquí se usa el id del carrito en el parámetro :cid para especificar en que carrito quiero poner el producto, y se usa el id del producto en el parámetro :pid para especificar que producto a poner en el carrito
 
-- Método PUT (para añadir paginación)
-http://localhost:8080/api/carts/:cid
+- Método PUT (para añadir paginación)<br>
+http://localhost:8080/api/carts/:cid<br>
 En este método se puede agregar también un sort, limit o page para hacer especificaciones en la página
 
-- Método PUT (para actualizar un producto en el array de productos)
-http://localhost:8080/api/carts/:cid/product/:pid
-En este método se puede alterar la cantidad de un producto especifico de un carrito especifico según su id pasándole un objeto se esta manera por ejemplo: 
-{              
-  "quantity": 8
-}
+- Método PUT (para actualizar un producto en el array de productos)<br>
+http://localhost:8080/api/carts/:cid/product/:pid<br>
+En este método se puede alterar la cantidad de un producto especifico de un carrito especifico según su id pasándole un objeto se esta manera por ejemplo: <br>
+{ <br>             
+  "quantity": 8<br>
+}<br>
 
 - Método DELETE (para quitar un producto del carrito)<br>
 http://localhost:8080/api/carts/:cid/product/:pid<br>
@@ -91,6 +91,6 @@ http://localhost:8080/api/carts/:cid<br>
 Este método eliminará todos los productos de un carrito según su id
 
 
-### Métodos del router views.products.js
-### (Los métodos este router solo se pueden en la web usando el navegador del lado del cliente)
+### Métodos del router views.products.js<br>
+### (Los métodos este router solo se pueden en la web usando el navegador del lado del cliente)<br>
 Este router usa las rutas http://localhost:8080/products y http://localhost:8080/carts/646b7bbcb035a38e23da5ad8 específicadas en la guía de rutas
