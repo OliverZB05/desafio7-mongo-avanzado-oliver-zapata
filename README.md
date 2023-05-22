@@ -10,9 +10,7 @@
 ## Guía de rutas
 
 ### http://localhost:8080/products
-En esta ruta se verán todos los productos con paginación con la opción de poder pasar algún producto al carrito, también se pueden ejecutar métodos post
-y put mediante alguna herramienta como postman y en el navegador se verán los cambios automáticamente mediante la implementación de sockets al método get
-que muestra la vista de esta ruta
+En esta ruta se verán todos los productos con paginación con la opción de poder pasar algún producto al carrito, también se pueden ejecutar métodos post y put mediante alguna herramienta como postman y en el navegador se verán los cambios automáticamente mediante la implementación de sockets al método get que muestra la vista de esta ruta
 
 ### http://localhost:8080/carts/646b7bbcb035a38e23da5ad8
 En esta ruta se pueden ver los productos del carrito en tiempo real al establecerse el id del carrito al final de la ruta, en este caso muestro los productos
