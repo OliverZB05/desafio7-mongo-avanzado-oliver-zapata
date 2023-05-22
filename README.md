@@ -72,7 +72,7 @@ En este método se puede agregar también un sort, limit o page para hacer espec
 - Método PUT (para actualizar un producto en el array de productos)<br>
 http://localhost:8080/api/carts/:cid/product/:pid<br>
 En este método se puede alterar la cantidad de un producto especifico de un carrito especifico según su id pasándole un objeto se esta manera por ejemplo: <br>
-{ <br>             
+{             
   "quantity": 8<br>
 }<br>
 
