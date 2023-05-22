@@ -87,3 +87,12 @@ Cuando se elimina un producto con cierta cantidad (por ejemplo 8) esta va dismin
 http://localhost:8080/api/carts/deleteCart/:cid<br>
 Se borrará el carrito con el id específicado
 
+
+- Método DELETE (para eliminar todos los productos de un carrito)<br>
+http://localhost:8080/api/carts/:cid<br>
+Este método eliminará todos los productos de un carrito según su id
+
+
+### Métodos del router views.products.js
+### (Los métodos este router solo se pueden en la web usando el navegador del lado del cliente)
+Este router usa las rutas http://localhost:8080/products y http://localhost:8080/carts/646b7bbcb035a38e23da5ad8 específicadas en la guía de rutas
