@@ -4,26 +4,6 @@ import { cartsModel } from "../../dao/models/carts.js";
 
 const router = Router();
 
-
-/* router.get("/products", async (req, res) => {
-    const page = parseInt(req.query.page) || 1; // Número de página actual
-    const limit = parseInt(req.query.limit) || 3; // Número de documentos por página
-    const skip = (page - 1) * limit; // Número de documentos a omitir
-
-    const products = await productModel.find().skip(skip).limit(limit);
-    const productsArray = products.map(product => product.toObject());
-    const totalProducts = await productModel.countDocuments();
-    const totalPages = Math.ceil(totalProducts / limit);
-
-    res.render("products", {
-    products: productsArray,
-    page,
-    totalPages,
-    prevPage: page > 1 ? page - 1 : null,
-    nextPage: page < totalPages ? page + 1 : null
-    });
-}); */
-
 async function getProducts(page = 1, limit = 3) {
     const skip = (page - 1) * limit;
     const products = await productModel.find().skip(skip).limit(limit);
@@ -87,43 +67,6 @@ router.get("/carts/:cid", async (req, res) => {
     res.status(404).send({ error: error.message });
     }
 });
-
-
-/* router.get("/carts/:cid", async (req, res) => {
-    const cartId = req.params.cid;
-    const page = parseInt(req.query.page) || 1; // Número de página actual
-    const limit = parseInt(req.query.limit) || 3; // Número de documentos por página
-    const skip = (page - 1) * limit; // Número de documentos a omitir
-
-    const cart = await cartsModel.findById(cartId).populate('products.product');
-    if (!cart) {
-    return res.status(404).send({ error: 'Cart not found' });
-    }
-
-    // Agrega un mensaje de registro para imprimir el contenido del carrito
-    console.log('Cart:', cart);
-
-    const products = cart.products.map(p => ({
-    id: p.product.id,
-    title: p.product.title,
-    price: p.product.price,
-    quantity: p.quantity
-    }));
-    const paginatedProducts = products.slice(skip, skip + limit);
-    const totalProducts = products.length;
-    const totalPages = Math.ceil(totalProducts / limit);
-
-    res.render("cart", {
-    products: paginatedProducts,
-    page,
-    totalPages,
-    prevPage: page > 1 ? page - 1 : null,
-    nextPage: page < totalPages ? page + 1 : null
-    });
-}); */
-
-
-
 
 export default router;
 export {getProducts};
