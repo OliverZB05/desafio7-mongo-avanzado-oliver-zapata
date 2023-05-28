@@ -12,6 +12,7 @@ import __dirname from './utils.js';
 import cartsRouter from './routes/api/carts.router.js';
 import productsRouter from './routes/api/products.router.js';
 import viewsProductRouter from './routes/web/views.products.js';
+import viewsIndexRouter from './routes/web/views.index.js'
 //========={ Routers }=========
 
 import { Server } from "socket.io";
@@ -47,6 +48,7 @@ app.use(express.static(__dirname+"/public"));
 app.use("/", viewsProductRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
+app.use("/", viewsIndexRouter);
 
 const environment = async () => {
     try {
@@ -73,6 +75,10 @@ io.emit('products', productsData.products);
 const cartData = await getCart(cartId);
 io.emit('cart', cartData.products);
 });
+
+
+app.set('socketio', io);
+io.sockets.setMaxListeners(20);
 
 
 app.set('socketio', io);
